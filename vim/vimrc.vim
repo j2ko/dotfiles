@@ -254,4 +254,7 @@ au BufEnter /* call LoadCscope()
 " ------------------------------------
 " Theme
 " ------------------------------------
-colorscheme darkZ
+if has('gui_running')
+    colorscheme darkZ
+endif
+

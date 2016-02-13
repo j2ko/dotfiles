@@ -5,6 +5,8 @@
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+Plugin 'octol/vim-cpp-enhanced-highlight'
+"Plugin 'jeaye/color_coded'
 Plugin 'gmarik/Vundle.vim'
 "Plugin 'wting/rust.vim'
 Plugin 'rust-lang/rust.vim'
