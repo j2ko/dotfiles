@@ -27,6 +27,7 @@ endif
 " ------------------------------------
 " Editor
 " ------------------------------------
+set hidden
 set expandtab
 set smarttab
 set shiftwidth=4
@@ -114,13 +115,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-nnoremap <silent> <F3> :NERDTreeToggle <cr><cr>
+nnoremap <silent> <F3> :NERDTreeToggle <cr>
 
 "--------------------------------------
 " Language specific
 "-------------------------------------
 "| RUST
-set hidden
 let g:racer_cmd = "/home/j2ko/.cargo/bin/recer"
 let $RUST_SRC_PATH="/home/j2ko/Software/rust/src/"
 "let g:rustfmt_autosave = 1
@@ -142,7 +142,7 @@ map <f6> <esc>oendif<esc>
 
 imap <f6> <esc>oendif<esc>
 
-noremap <f4> :execute ':!gvim' TokenUnderCursor(1, 0) '&' <cr>
+noremap <f4> :execute ':!gvim' TokenUnderCursor(1, 0) '&'<CR>
 nnoremap <silent> <F2> :Tagbar<CR>
 nnoremap <silent> <F9> :BufExplorer<CR>
 
