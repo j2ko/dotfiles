@@ -1,40 +1,55 @@
 "-------------------------------------
 " Plugins for Vundle
 "-------------------------------------
-"
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'jeaye/color_coded'
 Plugin 'gmarik/Vundle.vim'
+
+"============ Experimental ===============
+"Plugin 'jeaye/color_coded'
 "Plugin 'wting/rust.vim'
-Plugin 'rust-lang/rust.vim'
+"Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-vinegar'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'amiorin/vim-project'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'thisivan/vim-bufexplorer'
 Plugin 'bogado/file-line'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/Conque-Shell'
 Plugin 'tpope/vim-obsession'
 Plugin 'mihaifm/vimpanel'
-Plugin 'scrooloose/nerdtree'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'mattn/emmet-vim'
 Plugin 'rking/ag.vim'
-"Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'shougo/unite.vim'
+Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'tacahiroy/ctrlp-funky'
+"=========================================
+"Files navigation
+Plugin 'wincent/command-t'
+Plugin 'scrooloose/nerdtree'
+
+"Buffers
+Plugin 'thisivan/vim-bufexplorer'
+
+"Edit
+Plugin 'tpope/vim-surround'
+
+"GUI
+Plugin 'bling/vim-airline'
+
+"Syntax
 Plugin 'kelan/gyp.vim'
 Plugin 'elzr/vim-json'
-Plugin 'shougo/unite.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'rust-lang/rust.vim'
+Plugin 'mattn/emmet-vim'
+
 call vundle#end()
 execute pathogen#infect()
 syntax on

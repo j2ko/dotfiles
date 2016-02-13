@@ -8,10 +8,57 @@
 set nocompatible 
 source ~/.vim/plug-vundle.vim
 "source ~/.vim/plug-plug.vim
+"-------------------------------------
+"GUI
+"-------------------------------------
+set nu
+set cc=80
+set wildmenu
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Bold\ 10
+set guitabtooltip=%!bufname($)
 
-"---------------------------
-" Additional functionality
-"---------------------------
+if !has("gui_running")
+    set t_Co=256
+    set mouse=a
+else
+    set guioptions-=T
+endif
+
+" ------------------------------------
+" Editor
+" ------------------------------------
+set expandtab
+set smarttab
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set foldmethod=syntax
+set foldcolumn=1
+set foldlevel=100
+set laststatus=2
+set foldtext=CustomFoldText()
+set completeopt-=preview
+set nocp
+set backspace=indent,eol,start
+set ic is vb sm cul cindent nowrap hls sm
+set scr=3
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+set backupskip=/tmp/*,/private/tmp/*"
+set backup
+set writebackup
+set noswapfile
+
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 "---------------------------
 "YouCompleteMe
@@ -33,59 +80,27 @@ nnoremap <silent> <F11> :YcmCompleter GoToDefinition<CR>
 nnoremap <silent> <F12> :YcmCompleter GoToDeclaration<CR>
 
 "-------------------------------------
-"GUI
-"-------------------------------------
-set wildmenu
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ Bold\ 10
-set guitabtooltip=%!bufname($)
-
-if !has("gui_running")
-    set t_Co=256
-    set mouse=a
-else
-    set guioptions-=T
-endif
-
-" ------------------------------------
-" Editor
-" ------------------------------------
-set nu
-set foldmethod=syntax
-set tabstop=4
-set foldcolumn=1
-set foldlevel=100
-set expandtab
-set shiftwidth=4
-set laststatus=2
-set cc=80
-set foldtext=CustomFoldText()
-set completeopt-=preview
-set nocp
-set backspace=indent,eol,start
-set ic is vb sm cul cindent nowrap hls sm
-set scr=3
-
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-  set encoding=utf-8
-  setglobal fileencoding=utf-8
-  "setglobal bomb
-  set fileencodings=ucs-bom,utf-8,latin1
-endif
-"-------------------------------------
-"Globals
-"-------------------------------------
-
-let g:zoomwin_localoptlist = ["ai","ar","bh","bin","bl","bomb","bt","cfu","ci","cin","cink","cino","cinw","cms","com","cpt","diff","efm","eol","ep","et","fenc","fex","ff","flp","fo","ft","gp","imi","ims","inde","inex","indk","inf","isk","key","kmp","lisp","mps","ml","ma","mod","nf","ofu","oft","pi","qe","ro","sw","sn","si","sts","spc","spf","spl","sua","swf","smc","syn","ts","tx","tw","wm"]
-
-"-------------------------------------
 " Airline
 "-------------------------------------
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='dark'
+
+"--------------------------------------
+" Language specific
+"-------------------------------------
+"| RUST
+set hidden
+let g:racer_cmd = "/home/j2ko/.cargo/bin/recer"
+let $RUST_SRC_PATH="/home/j2ko/Software/rust/src/"
+"let g:rustfmt_autosave = 1
+
+"| GOLANG
+let g:go_fmt_command = "goimports"
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 
 "-------------------------------------
 "Keymap
@@ -136,14 +151,6 @@ if &diff
   set noea " set ea in diftop.vim
   set co=159 lines=54
 endif
-"--------------------------------------
-" Rust
-"-------------------------------------
-
-set hidden
-let g:racer_cmd = "/home/j2ko/.cargo/bin/recer"
-let $RUST_SRC_PATH="/home/j2ko/Software/rust/src/"
-"let g:rustfmt_autosave = 1
 
 autocmd FileType c inoremap <CR> <CR>x<BS>
 autocmd FileType c nnoremap o ox<BS>
@@ -250,6 +257,12 @@ endfunction
 
 
 au BufEnter /* call LoadCscope() 
+
+"-------------------------------------
+"Globals
+"-------------------------------------
+
+let g:zoomwin_localoptlist = ["ai","ar","bh","bin","bl","bomb","bt","cfu","ci","cin","cink","cino","cinw","cms","com","cpt","diff","efm","eol","ep","et","fenc","fex","ff","flp","fo","ft","gp","imi","ims","inde","inex","indk","inf","isk","key","kmp","lisp","mps","ml","ma","mod","nf","ofu","oft","pi","qe","ro","sw","sn","si","sts","spc","spf","spl","sua","swf","smc","syn","ts","tx","tw","wm"]
 
 " ------------------------------------
 " Theme
