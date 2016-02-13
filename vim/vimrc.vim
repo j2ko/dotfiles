@@ -113,7 +113,7 @@ let g:airline_mode_map = {
       \ }
 
 "-------------------------------------
- NERDTree
+" NERDTree
 "-------------------------------------
 "autocmd vimenter * NERDTreeToggle
 
