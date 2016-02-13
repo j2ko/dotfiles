@@ -98,8 +98,22 @@ let g:airline#extensions#tabline#tab_nr_type   =  1 " tab number
 let g:airline#extensions#tabline#fnamecollapse =  1 " /a/m/model.rb
 let g:airline#extensions#hunks#non_zero_only   =  1 " git gutter
 
+let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+
 "-------------------------------------
-" NERDTree
+ NERDTree
 "-------------------------------------
 "autocmd vimenter * NERDTreeToggle
 
