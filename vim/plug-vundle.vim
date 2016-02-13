@@ -5,11 +5,12 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-
 "============ Experimental ===============
 "Plugin 'jeaye/color_coded'
 "Plugin 'wting/rust.vim'
 "Plugin 'scrooloose/syntastic'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Shougo/vimproc.vim'
@@ -42,7 +43,8 @@ Plugin 'thisivan/vim-bufexplorer'
 Plugin 'tpope/vim-surround'
 
 "GUI
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 "Syntax
 Plugin 'kelan/gyp.vim'

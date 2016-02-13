@@ -82,9 +82,39 @@ nnoremap <silent> <F12> :YcmCompleter GoToDeclaration<CR>
 "-------------------------------------
 " Airline
 "-------------------------------------
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
+if !exists("g:airline_symbols")
+  let g:airline_symbols = {}
+endif
 let g:airline_theme='dark'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#empty_message  =  "no .git"
+let g:airline#extensions#whitespace#enabled    =  0
+let g:airline#extensions#syntastic#enabled     =  1
+let g:airline#extensions#tabline#enabled       =  1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#tab_nr_type   =  1 " tab number
+let g:airline#extensions#tabline#fnamecollapse =  1 " /a/m/model.rb
+let g:airline#extensions#hunks#non_zero_only   =  1 " git gutter
+
+"-------------------------------------
+" NERDTree
+"-------------------------------------
+"autocmd vimenter * NERDTreeToggle
+
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+nnoremap <silent> <F3> :NERDTreeToggle <cr><cr>
 
 "--------------------------------------
 " Language specific
@@ -113,7 +143,6 @@ map <f6> <esc>oendif<esc>
 imap <f6> <esc>oendif<esc>
 
 noremap <f4> :execute ':!gvim' TokenUnderCursor(1, 0) '&' <cr>
-nnoremap <silent> <F3> :NERDTreeToggle <cr><cr>
 nnoremap <silent> <F2> :Tagbar<CR>
 nnoremap <silent> <F9> :BufExplorer<CR>
 
