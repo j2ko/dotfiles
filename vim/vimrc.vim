@@ -312,5 +312,7 @@ let g:zoomwin_localoptlist = ["ai","ar","bh","bin","bl","bomb","bt","cfu","ci","
 " ------------------------------------
 if has('gui_running')
     colorscheme darkZ
+else
+    colorscheme monokai-chris
 endif
 
