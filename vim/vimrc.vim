@@ -50,7 +50,7 @@ set backupskip=/tmp/*,/private/tmp/*"
 set backup
 set writebackup
 set noswapfile
-
+let mapleader=" "
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
@@ -131,6 +131,14 @@ let g:NERDTreeIndicatorMapCustom = {
 
 nnoremap <silent> <F3> :NERDTreeToggle <cr>
 
+"-------------------------------------
+" BufExplorer 
+"-------------------------------------
+" Buffers - explore/next/previous: Alt-F12, F12, Shift-F12.
+noremap <leader>` :BufExplorer<CR>
+noremap <leader>1 :bp<CR>
+noremap <leader>2 :bn<CR>
+
 "--------------------------------------
 " Language specific
 "-------------------------------------
@@ -145,20 +153,18 @@ let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 
-
 "-------------------------------------
 "Keymap
 "-------------------------------------
 map gf :tabe <cfile><cr>
-map <C-S-Left> :tabprevious<cr>
-map <C-S-Right> :tabnext<cr>
-map <f6> <esc>oendif<esc>
+map <leader>q :tabprevious<cr>
+map <leader>w :tabnext<cr>
 
+map <f6> <esc>oendif<esc>
 imap <f6> <esc>oendif<esc>
 
 noremap <f4> :execute ':!gvim' TokenUnderCursor(1, 0) '&'<CR>
 nnoremap <silent> <F2> :Tagbar<CR>
-nnoremap <silent> <F9> :BufExplorer<CR>
 
 " moving lines
 nnoremap <A-j> :m .+1<CR>==
