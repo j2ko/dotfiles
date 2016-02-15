@@ -18,3 +18,5 @@ alias pe='pebble install --emulator basalt'
 alias pi='pebble install --phone 192.168.2.101'
 alias pbe='pb && pe'
 alias pbi='pb && pi'
+
+alias tmux='tmux -2'
