@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 "======== Considered for removal =========
 "Plug 'jeaye/color_coded'
 "Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'tacahiroy/ctrlp-funky'
 "Plug 'wincent/command-t'
 
 "============ Experimental ===============
@@ -29,7 +30,9 @@ Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bogado/file-line'
 Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/Conque-Shell'
+if !has('nvim')
+    Plug 'vim-scripts/Conque-Shell'
+endif
 Plug 'tpope/vim-obsession'
 Plug 'mihaifm/vimpanel'
 Plug 'wesleyche/SrcExpl'
@@ -38,7 +41,6 @@ Plug 'rking/ag.vim'
 Plug 'shougo/unite.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'tacahiroy/ctrlp-funky'
 "=========================================
 
 " Fuzzy finder
@@ -57,10 +59,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 "Syntax
-Plug 'kelan/gyp.vim'
 Plug 'elzr/vim-json'
 Plug 'rust-lang/rust.vim'
-Plug 'mattn/emmet-vim'
 
 filetype plugin indent on 
 call plug#end()

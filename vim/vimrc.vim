@@ -6,8 +6,7 @@
 " Plugins 
 "-------------------------------------
 set nocompatible 
-source ~/.vim/plug-vundle.vim
-"source ~/.vim/plug-plug.vim
+source ~/.vim/plug-plug.vim
 "-------------------------------------
 "GUI
 "-------------------------------------
