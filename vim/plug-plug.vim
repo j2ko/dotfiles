@@ -9,33 +9,58 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-"Plun 'wting/rust.vim'
-Plug 'rust-lang/rust.vim'
+"======== Considered for removal =========
+"Plug 'jeaye/color_coded'
+"Plug 'ctrlpvim/ctrlp.vim'
+"Plug 'wincent/command-t'
+
+"============ Experimental ===============
+"Plug 'wting/rust.vim'
+"Plug 'Valloric/YouCompleteMe'
+
+Plug 'scrooloose/syntastic'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-vinegar'
 Plug 'Shougo/vimproc.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'amiorin/vim-project'
 Plug 'flazz/vim-colorschemes'
-Plug 'bling/vim-airline'
 Plug 'altercation/vim-colors-solarized'
-Plug 'thisivan/vim-bufexplorer'
 Plug 'bogado/file-line'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/Conque-Shell'
 Plug 'tpope/vim-obsession'
 Plug 'mihaifm/vimpanel'
-Plug 'scrooloose/nerdtree'
 Plug 'wesleyche/SrcExpl'
 Plug 'scrooloose/nerdcommenter'
-Plug 'git://git.wincent.com/command-t.git'
-Plug 'mattn/emmet-vim'
 Plug 'rking/ag.vim'
-"Plun 'scrooloose/syntastic'
-Plug 'Valloric/YouCompleteMe'
+Plug 'shougo/unite.vim'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'tacahiroy/ctrlp-funky'
+"=========================================
+
+" Fuzzy finder
+Plug 'junegunn/fzf'
+"Files navigation
+Plug 'scrooloose/nerdtree'
+
+"Buffers
+Plug 'thisivan/vim-bufexplorer'
+
+"Edit
+Plug 'tpope/vim-surround'
+
+"GUI
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Syntax
 Plug 'kelan/gyp.vim'
 Plug 'elzr/vim-json'
-Plug 'shougo/unite.vim'
-Plug 'tpope/vim-surround'
-Plug 'hynek/vim-python-pep8-indent'
+Plug 'rust-lang/rust.vim'
+Plug 'mattn/emmet-vim'
 
 filetype plugin indent on 
 call plug#end()
