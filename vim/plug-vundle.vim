@@ -3,16 +3,22 @@
 "-------------------------------------
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-"============ Experimental ===============
+"======== Considered for removal =========
 "Plugin 'jeaye/color_coded'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'wincent/command-t'
+
+"============ Experimental ===============
 "Plugin 'wting/rust.vim'
-"Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
+
+Plugin 'scrooloose/syntastic'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 Plugin 'tpope/vim-vinegar'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'amiorin/vim-project'
@@ -26,14 +32,15 @@ Plugin 'mihaifm/vimpanel'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rking/ag.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'shougo/unite.vim'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'tacahiroy/ctrlp-funky'
 "=========================================
+
+" Fuzzy finder
+Plugin 'junegunn/fzf'
 "Files navigation
-Plugin 'wincent/command-t'
 Plugin 'scrooloose/nerdtree'
 
 "Buffers

@@ -139,6 +139,12 @@ noremap <leader>` :BufExplorer<CR>
 noremap <leader>1 :bp<CR>
 noremap <leader>2 :bn<CR>
 
+"-------------------------------------
+" Syntastic
+"-------------------------------------
+"
+let g:syntastic_rust_checkers=['rustc']
+
 "--------------------------------------
 " Language specific
 "-------------------------------------
