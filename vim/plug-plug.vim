@@ -7,8 +7,15 @@ if empty(glob("~/.vim/autoload/plug.vim"))
     execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
-call plug#begin('~/.vim/plugged')
+let nvim = has('nvim')
 
+function! IncludeIf(cond, ...)
+    let opts = get(a:000, 0, {})
+    return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
+
+call plug#begin('~/.vim/plugged')
 "======== Considered for removal =========
 "Plug 'jeaye/color_coded'
 "Plug 'ctrlpvim/ctrlp.vim'
@@ -30,9 +37,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'bogado/file-line'
 Plug 'majutsushi/tagbar'
-if !has('nvim')
-    Plug 'vim-scripts/Conque-Shell'
-endif
+Plug 'vim-scripts/Conque-Shell', IncludeIf(!nvim)
 Plug 'tpope/vim-obsession'
 Plug 'mihaifm/vimpanel'
 Plug 'wesleyche/SrcExpl'
@@ -61,6 +66,4 @@ Plug 'vim-airline/vim-airline-themes'
 "Syntax
 Plug 'elzr/vim-json'
 Plug 'rust-lang/rust.vim'
-
-filetype plugin indent on 
 call plug#end()
