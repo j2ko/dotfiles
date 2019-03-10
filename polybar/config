@@ -1,0 +1,211 @@
+[global/wm]
+margin-bottom=0
+margin-top=0
+override-redirect= true
+
+[color]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[const]
+separator = %{F#3D3B37}∣%{F-}
+
+[bar/top]
+enable-ipc = true
+monitor = ${env:MONITOR}
+width = 100%
+height = 24
+dpi = 192
+
+wm-restack = i3
+
+background = ${color.background}
+foreground = ${color.foreground}
+
+line-color = ${color.background}
+line-size = 1
+
+offset-x = 0
+offset-y = 0
+
+;radius = 6.0
+;fixed-center = true
+
+border-size = 0
+border-color = #ffffff
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=6;3
+font-1 = Roboto Mono Nerd Font Complete Mono:size=6;3
+font-2 = RobotoMono Nerd Font Mono:size=6;3
+font-3 = FontAwesome:size=6;3
+font-4 = Material\ Icons:size=6;3
+font-5 = Weather Icons:pixelsize=6;3
+
+separator = ${const.separator}
+
+modules-left = i3
+modules-right = cpu memory keyboard volume wired-network bluetooth date powermenu 
+tray-position = right 
+tray-padding = 5
+tray_output = primary
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+overline-size = 10
+overline-color = ${self.background}
+
+[module/powermenu]
+type = custom/text
+content =
+content-padding = 2
+click-left= ~/.config/polybar/powermenu_rofi.sh
+
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = %{A1:gnome-system-monitor:}%{T4}%{T-} <ramp-load>%{A}
+ramp-load-0 = ▁
+ramp-load-1 = ▂
+ramp-load-2 = ▃
+ramp-load-3 = ▄
+ramp-load-4 = ▅
+ramp-load-5 = ▆
+ramp-load-6 = ▇
+ramp-load-7 = █
+
+[module/openweathermap-fullfeatured]
+type = custom/script
+exec = ~/Software/polybar-scripts/polybar-scripts/openweathermap-fullfeatured/openweathermap-fullfeatured.sh
+interval = 600
+format = <label> 
+label-font = 5
+click-middle = "firefox -new-tab https://ua.sinoptik.ua/%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D0%B0-%D0%BB%D1%8C%D0%B2%D1%96%D0%B2"
+
+[module/date]
+type = internal/date
+time =  %%{F#fff}%H:%M%{F-}
+date =   %%{F#99}%m.%d%%{F-}
+label =  %time% %{A1:zenity --calendar:} %date% %{A}
+
+[module/memory]
+type = internal/memory
+format = <label>
+label =  %percentage_used%%
+
+# [module/wired-network]
+# type = internal/network
+# interface = eno1
+# interval = 1.0
+# ping-interval = 10
+# click-left = exec gnome-control-center network
+
+format-connected = %{A1:gnome-control-center network:}<label-connected>%{A}
+format-disconnected = <label-disconnected>
+label-connected = 
+label-disconnected = %{F#FF0000}%{F-}
+
+[module/bluetooth]
+type = custom/script
+tail = true
+exec = /home/j2ko/Software/dotfiles/polybar/scripts/bluetooth/bluetooth.sh
+click-left = exec gnome-control-center bluetooth
+click-middle = /home/j2ko/Software/dotfiles/polybar/scripts/bluetooth/bluetooth.sh --toggle
+interval = 10
+
+[module/volume]
+type = internal/alsa
+format-volume = <ramp-volume> <label-volume>
+label-muted =   muted
+label-muted-foreground = #66
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+[module/keyboard]
+type = internal/xkeyboard
+format = <label-layout> <label-indicator>
+format-prefix = " "
+format-prefix-foreground = #ffffff
+;format-prefix-underline = #ff0000
+;blacklist-0 = num lock
+;blacklist-1 = scroll lock
+label-layout = %layout%
+label-indicator = "1"
+;label-layout-underline = #fba922
+label-indicator-padding = 0
+label-indicator-margin = 0
+label-indicator-background = #fba922
+;label-indicator-underline = #fba922
+
+[module/clock]
+type = internal/date
+interval = 5
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+
+; Use fuzzy (partial) matching on labels when assigning 
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces 
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+ws-icon-0 = 1
+ws-icon-1 = 2
+ws-icon-2 = 3
+ws-icon-3 = 4
+ws-icon-4 = 5
+ws-icon-default = ♟
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 3
+label-mode-background = #e60053
+
+label-focused =  %index%
+label-focused-foreground = #ffffff
+label-focused-background = #4D4077
+label-focused-padding = 3
+
+label-unfocused = %index%
+label-unfocused-foreground = #6F6F6F
+label-unfocused-background = #1c1c1c
+label-unfocused-padding = 3
+
+label-visible = %index%
+label-visible-padding = 3
+label-visible-foreground = #FFFFFF
+label-visible-background = #3f3f3f
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-padding = 3
+
+; Separator in between workspaces
+label-separator = |
+label-separator-padding = 0
+label-separator-foreground = #ffb52a
