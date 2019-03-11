@@ -10,6 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $alt Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -177,6 +178,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi -show window
 
@@ -189,12 +191,11 @@ client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
 
-gaps inner 5
+# gaps inner 5
 
-#media keys 
+# media keys 
 # Pulse Audio controls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
@@ -202,6 +203,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute s
 
 exec feh --bg-fill /home/j2ko/Pictures/wallpaper/wallhaven-707905.png --bg-fill /home/j2ko/Pictures/wallpaper/wallhaven-664897.png
 
+exec --no-startup-id xautolock -time 10 -locker '$HOME/.config/i3/lock.sh'
+bindsym Ctrl+$alt+l exec $HOME/.config/i3/lock.sh
 
 exec setxkbmap -option 'grp:alt_shift_toggle' -layout "us,ua"
 
@@ -209,4 +212,4 @@ exec --no-startup-id redshift
 exec --no-startup-id compton
 exec --no-startup-id guake
 exec --no-startup-id clipit
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet1
