@@ -179,7 +179,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi  -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi -show window
 
 # set some nice colors      border     background  text
@@ -198,7 +198,7 @@ client.background       #FFFFFF
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec feh --bg-fill ~/.config/i3/wallhaven-707905.png --bg-fill ~/.config/i3/wallhaven-664897.png
-
+exec --no-startup-id xrandr --output DP-2 --auto --left-of DP-1
 
 exec --no-startup-id xautolock -time 10 -locker '$HOME/.config/i3/lock.sh'
 bindsym Ctrl+$alt+l exec $HOME/.config/i3/lock.sh
