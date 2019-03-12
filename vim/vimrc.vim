@@ -148,7 +148,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 " Language specific
 "-------------------------------------
 "| RUST
-let g:racer_cmd = "/home/j2ko/.cargo/bin/recer"
+let g:racer_cmd = "/home/j2ko/.cargo/bin/racer"
 let $RUST_SRC_PATH="/home/j2ko/Software/rust/src/"
 "let g:rustfmt_autosave = 1
 

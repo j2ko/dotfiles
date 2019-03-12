@@ -14,7 +14,7 @@ endfunction
 
 call plug#begin('~/.vim/plugged')
 "============ Experimental ===============
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-obsession'
 Plug 'amiorin/vim-project'
 Plug 'majutsushi/tagbar'
