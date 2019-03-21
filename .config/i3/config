@@ -193,15 +193,13 @@ client.background       #FFFFFF
 
 # gaps inner 5
 
-# media keys 
-# Pulse Audio controls
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
+# media keys 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
-exec feh --bg-fill /home/j2ko/Pictures/wallpaper/wallhaven-707905.png --bg-fill /home/j2ko/Pictures/wallpaper/wallhaven-664897.png
+exec feh --bg-fill $HOME/.config/i3/background/left.png --bg-fill $HOME/.config/i3/background/right.png 
 
 exec --no-startup-id xautolock -time 10 -locker '$HOME/.config/i3/lock.sh'
 bindsym Ctrl+$alt+l exec $HOME/.config/i3/lock.sh
@@ -212,4 +210,4 @@ exec --no-startup-id redshift
 exec --no-startup-id compton
 exec --no-startup-id guake
 exec --no-startup-id clipit
-exec --no-startup-id nm-applet1
+exec --no-startup-id nm-applet
