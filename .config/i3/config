@@ -181,6 +181,7 @@ bindsym $mod+r mode "resize"
 
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi -show window
+bindsym $mod+Ctrl+d exec --no-startup-id rofi -show drun
 
 # set some nice colors      border     background  text
 client.focused          #581F99 #4D4077 #FFFFFF #4D4077   #4D4077
