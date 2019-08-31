@@ -1,3 +1,3 @@
 # Keychrone
-
-SUBSYSTEM=="hid", ENV{HID_NAME}=="Keychron K2", ACTION=="add", RUN+="/home/j2ko/.config/i3/keychrone.sh"
+SUBSYSTEM=="hid", ENV{HID_NAME}=="Keychron K2",                ACTION=="bind", RUN+="/home/j2ko/.config/i3/keychrone.sh 1"
+SUBSYSTEM=="hid", ENV{HID_NAME}=="USB Keychron K2 USB DEVICE", ACTION=="bind", RUN+="/home/j2ko/.config/i3/keychrone.sh 2"
